@@ -11,7 +11,7 @@ const EMAIL_SERVER = express();
 
 EMAIL_SERVER.set('port', 3200 || process.env.PORT );
 
-//: definir las cabeceras C.O.R.S
+//: definir las cabeceras CORS
 
 EMAIL_SERVER.use(cors({
     origin: 'http://localhost:4200',
