@@ -1,11 +1,9 @@
 import { Router } from 'express';
 import { Resend } from 'resend';
-import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 
 const routes = Router();
-dotenv.config();
 
 //store email template path and store the emailTemplate in templateContent
 const templatePath = '../templates/email-template.html';
