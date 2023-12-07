@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: transparent;
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 18px;
+            margin-left: 1.8rem;
+            color: #010101;
+        }
+
+        span {
+            font-size: smaller;
+        }
+
+        .font-verdana {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        img {
+            object-fit: none;
+        }
+
+        .main {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            top: 13rem;
+            height: 350px;
+            text-align: center;
+        }
+
+        .name-title {
+            line-height: 1;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 250%;
+            -webkit-background-clip: text !important;
+            background-clip: text;
+            overflow: hidden;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: thin;
+            animation: change-gradient 8.5s cubic-bezier(0, 0.79, 0.25, 1) infinite;
+        }
+
+
+
+        @keyframes change-gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+
+    <div class="main">
+        <picture>
+            <img src="../../assets/ImageTemplate.png" alt="">
+        </picture>
+        <div class="img-container">
+            <div class="name-title">{{name}}</div>
+            <p>{{subject}}</p>
+            <p>{{message}}</p>
+            <p><span>{{email}}</span></p>
+        </div>
+    </div>
+</body>
+
+</html>
