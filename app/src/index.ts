@@ -9,7 +9,7 @@ EMAIL_SERVER.set('port', process.env.PORT || 3200 );
 //: definir las cabeceras CORS
 
 EMAIL_SERVER.use(cors({
-    origin: ['http://localhost:4200', 'https://emailservice-dev-kkra.1.us-1.fl0.io/sendEmail'],
+    origin: ['http://localhost:4200', 'https://tomsh1.github.io/TomsH1-personal-portfolio.github.io/'],
     methods: 'POST',
     // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
