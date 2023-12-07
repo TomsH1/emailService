@@ -31,8 +31,8 @@ routes.post('/sendEmail', async (req, res)  =>{
 
     try {
       const sendEmail = await resend.emails.send({
-        from: `${name} <${process.env.EMAIL_API_MANAGER}>`,
-        to: process.env.DESTINATIONS_EMAIL!.split(','),
+        from: name+' <'+ process.env.EMAIL_API_MANAGER+'>',
+        to: ['tomashdez777@gmail.com' ,'tomashdez1080@gmail.com'],
         subject: 'Un cliente ha visto tu portafolio', 
         html: emailHtml,
       });
