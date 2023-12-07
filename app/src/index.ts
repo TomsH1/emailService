@@ -1,15 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import dotenv from 'dotenv'
-
-dotenv.config();
-
 import emailServices from './routes/emailService'
-
 const EMAIL_SERVER = express();
 
-EMAIL_SERVER.set('port', 3200 || process.env.PORT );
+EMAIL_SERVER.set('port', process.env.PORT || 3200 );
 
 //: definir las cabeceras CORS
 
