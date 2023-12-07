@@ -6,13 +6,15 @@ const EMAIL_SERVER = express();
 
 EMAIL_SERVER.set('port', process.env.PORT || 3200 );
 
-//: definir las cabeceras CORS
-
+//: Activar cabezera de peticiones de origen cruzado CORS y añadir rutas permitidas
 EMAIL_SERVER.use(cors({
-    origin: ['http://localhost:4200', 'https://tomsh1.github.io/TomsH1-personal-portfolio.github.io/'],
+    origin: ['http://localhost:4200', 'https://tomsh1.github.io'],
     methods: 'POST',
     // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
+//: Permitir solicitudes del tipo "preflights"
+EMAIL_SERVER.options('*', cors());
 
 EMAIL_SERVER.use((req, res, next) => {
     // console.log('Aplicando middleware cors');
