@@ -14,7 +14,7 @@ EMAIL_SERVER.set('port', 3200 || process.env.PORT );
 //: definir las cabeceras CORS
 
 EMAIL_SERVER.use(cors({
-    origin: 'http://localhost:4200',
+    origin: ['http://localhost:4200', 'https://emailservice-dev-kkra.1.us-1.fl0.io/sendEmail'],
     methods: 'POST',
     // allowedHeaders: ['Content-Type', 'Authorization'],
 }));

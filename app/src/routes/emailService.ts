@@ -19,11 +19,10 @@ const replacePlaceholders = (html: string, data: { [x: string]: any; hasOwnPrope
             html = html.replace(new RegExp(placeholder, 'g'), data[key]);
         }
     }
-    return html;
+    return html; 
 }
 
 routes.post('/sendEmail', async (req, res)  =>{
-
     const resend = new Resend(process.env.RESEND_API_KEY);
     const {name, subject, email, message} = req.body;
     const emailHtml = replacePlaceholders(templateContent, {name, subject, email, message});
@@ -36,8 +35,7 @@ routes.post('/sendEmail', async (req, res)  =>{
       const sendEmail = await resend.emails.send({
         from: `${name} <${process.env.EMAIL_API_MANAGER}>`,
         to: process.env.DESTINATIONS_EMAIL!.split(','),
-        text: `${subject}\n ${message} \n ${email}`,
-        subject: `Un cliente ha visto tu portafolio`,
+        subject: 'Un cliente ha visto tu portafolio', 
         html: emailHtml,
       });
       if(sendEmail.data == null){
@@ -47,7 +45,7 @@ routes.post('/sendEmail', async (req, res)  =>{
       
     } catch (error) {
       console.error(error);
-      return res.status(500).send({'Error': 'Internal server error'})
+      return res.status(500).send({'Error': 'Internal server error \n'+error})
     }
   })
 

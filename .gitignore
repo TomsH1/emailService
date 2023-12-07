@@ -1,1 +1,5 @@
 node_modules/
+app/dist/
+.env
+.nvmrc
+.vscode/
